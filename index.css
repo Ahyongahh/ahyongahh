@@ -1,0 +1,166 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 500px;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FAF0E6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.topnav {
+    position: sticky;
+    top: 0;
+    opacity: 100;;
+    background-color: #FAF0E6;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.topnav a{
+    
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a.active{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.section-1, .section-2, .section-3, .section-4{
+    width: calc(100vw - 16px); /* Adjust for scrollbar width */
+    height: 100vh;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+.section-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 75px;
+}
+
+.section-2{
+    background-color: #FFDAB9;
+}
+
+.resume-timeline {
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.resume-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.resume-item::before {
+    content: '•';
+    position: absolute;
+    left: -6px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+    gap: 15px; /* Space between each card */
+    padding: 1px; /* Padding around the grid */
+    max-width: 1200px; /* Optional: set max width */
+    margin: 0 auto; /* Center the grid on the page */
+    margin-top: 20px; 
+}
+
+.card {
+    display: flex; /* Arrange items horizontally within each card */
+    align-items: center; /* Center content vertically */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.card-content p {
+    margin: 8px 0 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.container {
+    display: flex; /* Makes timelines horizontal */
+    gap: 20px; /* Space between the timelines */
+}
+
+/* Style for the section */
+.section-4 {
+    background-color: #D6B3D3;
+    padding: 30px;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Center content and space out */
+.content {
+    display: flex;
+    align-items: flex-start; /* Aligns image and name vertically */
+    gap: 10px; /* Space between the image and name */
+    margin-top: 10%;
+}
+
+/* Styling for the image */
+.mypic {
+    width: 250px; /* Adjust as needed */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 20px;
+}
+
+/* Styling for the details */
+.details h3 {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Styling for the links */
+.details a {
+    color: #4A235A;
+    text-decoration: none;
+}
+
+.details a:hover {
+    text-decoration: underline;
+}
+
+
