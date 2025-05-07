@@ -6,7 +6,6 @@ body{
     min-height: 500px;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -18,13 +17,13 @@ body{
 .topnav {
     position: sticky;
     top: 0;
-    opacity: 100;;
     background-color: #FAF0E6;
     overflow-x: hidden;
     margin-bottom: 20px;
     display: flex;
     justify-content: flex-end;
     width: 100%; /* Ensure it takes the full width */
+    z-index: 1; /* Integer value */ 
 }
 
 .topnav a{
@@ -33,12 +32,22 @@ body{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s ease; /* For smooth background change */
+ 
 }
 
-.topnav a.active{
-    background-color: whitesmoke;
-    color: black;
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
 }
+
+section.in-view {
+   /*  border: 2px solid #4CAF50;  Green border around the section */
+    /* background-color: #f9f9f9;  Slight background change */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
 
 .section-1, .section-2, .section-3, .section-4{
     width: calc(100vw - 16px); /* Adjust for scrollbar width */
@@ -161,6 +170,80 @@ body{
 
 .details a:hover {
     text-decoration: underline;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+    .topnav {
+        display: none;
+    }
+
+
+    .container {
+        padding: 0 16px;    /* Give it some breathing room on the sides */
+    } 
+
+
+    /* Adjust the topnav */
+    .topnav {
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;  /* Center items */
+        position: relative;
+    }
+
+    /* Make sections more compact */
+    .section-1, .section-2, .section-3, .section-4 {
+        width: 100%;  /* Full width */
+        height: auto;  /* Let height be dynamic */
+        padding: 10px;  /* Adjust padding for smaller screens */
+    }
+
+    .section-1 {
+        font-size: 32px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;  /* Stack cards vertically */
+        gap: 10px;  /* Adjust spacing between cards */
+       padding-left: 12px;
+    }
+
+    .card {
+        flex-direction: row;  /* Side-by-side layout */
+        align-items: center;  /* Vertically center image and text */
+        padding: 12px;
+        width: 75%;
+    }
+
+    .card-image {
+        width: 60px;  /* Smaller image for mobile */
+        height: 60px;
+        margin-right: 10px;  /* Space between image and text */
+    }
+
+    .card-content h3 {
+        font-size: 1.2em;  /* Slightly smaller text */
+    }
+
+    .card-content p {
+        font-size: 0.99em;
+    }
+
+    .mypic {
+        width: 150px;  /* Smaller image on mobile */
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;  /* Stack timelines vertically on mobile */
+        align-items: center;  /* Center the items */
+    }
+
+    .details {
+        text-align: center;  /* Center text in details section */
+    }
 }
 
 
