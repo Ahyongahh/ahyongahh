@@ -11,11 +11,49 @@
 <body>
 
     <div class="topnav">
-        <a class="active" href="#section-1">Home</a>
+        <a href="#section-1">Home</a>
         <a href= "#section-2">Education</a>
         <a href="#section-3">Projects</a>
         <a href="#section-4">Contact Me</a>
     </div>
+
+    <script>
+
+        console.log("JS loaded");
+            // Get All Nav Links
+            const navLinks = document.querySelectorAll(".topnav a");
+        
+                navLinks.forEach(link => {
+                    link.addEventListener("click", function() {
+                    // remove active from all links
+                    navLinks.forEach(link => link.classList.remove("active"));
+        
+                    //add active to the clicked one
+                    this.classList.add("active")
+                    });
+                });
+
+            //Detect for scroll and check if the section is in view.
+
+            window.addEventListener('scroll', function(){
+                const section = document.querySelectorAll("section");
+
+                section.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const link = navLinks[index]; //Corresponding links for the section
+
+                    //Check if section is in view
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        section.classList.add("in-view");
+                        link.classList.add("active"); //Add Active in the corresponding
+                    } else {
+                        section.classList.remove("in-view");
+                        link.classList.remove("active")
+                    }
+                })
+            })
+        </script>
+
 
     <section class="section-1" style="background-color:#ADD8E6 ;" id="section-1">
         <h1><span class="auto-type"></span></h1>
@@ -174,7 +212,7 @@
                 <img src="img/worldskills.png" alt="Card Image" class="card-image">
                 <div class="card-content">
                     <h3>Contributor</h3>
-                    <p>Assisted in Worldskills Singaporer in orgainising student-related activity</p>
+                    <p>Assisted in Worldskills Singapore in organising student-related activity</p>
                 </div>
             </div>
             <div class="card">
